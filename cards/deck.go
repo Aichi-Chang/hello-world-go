@@ -14,6 +14,8 @@ func newDeck() deck {
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
+			// append does not modify the existing slides, it returns a new slices
+			// that's why we need to put cards first, like JS [...a, b, c]
 			cards = append(cards, suit+" of "+value)
 		}
 	}
@@ -28,4 +30,8 @@ func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
 }
