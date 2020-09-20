@@ -6,8 +6,10 @@ func main() {
 	// the command would be 'go run main.go deck.go'
 	cards := newDeck()
 
-	hand, remainingCards := deal(cards, 5)
+	cards.saveToFile("my_cards")
 
-	hand.print()
-	remainingCards.print()
+	// hand, remainingCards := deal(cards, 5)
+
+	// hand.print()
+	// remainingCards.print()
 }
