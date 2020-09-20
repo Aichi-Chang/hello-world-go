@@ -1,26 +1,13 @@
 package main
 
-import "fmt"
-
 func main() {
-	// var card string = "Ace of Spades"
-	// is similar to this, := allows Go to determin the data type
-	// card := newCard()
-	// fmt.Println(card)
-
-	cards := []string{"Ace if Diamonds", newCard()}
+	// the deck is defined in deck.go
+	// we also need to run deck.go while running main.go
+	// the command would be 'go run main.go deck.go'
+	cards := newDeck()
 	// append does not modify the existing slides, it returns a new slices
-	cards = append(cards, "Six of Spades")
+	// that's why we need to put cards first, like JS [...a, b, c]
+	// cards = append(cards, "Six of Spades")
 
-	// with for loops in Go,
-	// each loop we need to declear the type of data
-	for i, card := range cards {
-		fmt.Println(i, card)
-	}
-
-}
-
-// when return, we need to tell Go what type of data we want it to return
-func newCard() string {
-	return "Five of Diamonds"
+	cards.print()
 }
