@@ -1,12 +1,15 @@
 package main
 
+import "fmt"
+
 func main() {
 	// the deck is defined in deck.go
 	// we also need to run deck.go while running main.go
 	// the command would be 'go run main.go deck.go'
-	cards := newDeck()
+	cards := newDeckFromFile("my_cards")
 
-	cards.saveToFile("my_cards")
+	fmt.Println(cards)
+	cards.print()
 
 	// hand, remainingCards := deal(cards, 5)
 
