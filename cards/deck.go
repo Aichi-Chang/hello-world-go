@@ -23,7 +23,7 @@ func newDeck() deck {
 		for _, value := range cardValues {
 			// append does not modify the existing slides, it returns a new slices
 			// that's why we need to put cards first, like JS [...a, b, c]
-			cards = append(cards, suit+" of "+value)
+			cards = append(cards, value+" of "+suit)
 		}
 	}
 
