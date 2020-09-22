@@ -64,5 +64,5 @@ func newDeckFromFile(filename string) deck {
 	// split it in to slice of strings and save it in a variable "s"
 	s := strings.Split(string(bs), ",")
 	// and convert the slice of string to a deck
-	deck(s)
+	return deck(s)
 }
